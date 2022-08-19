@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  button {
+    border: none;
+    margin-right: 30px;
+    cursor: pointer;
+  }
+  %large-button-attr {
+    height: 40px;
+    min-width: 120px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  %small-button-attr {
+    height: 30px;
+    min-width: 120px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  #large-button {
+    //extend는 미디어쿼리(반응형, 모바일 웹)에서 사용안됌
+    @extend %large-button-attr;
+    background-color: #19ab20;
+    color: white;
+    &:hover {
+      background-color: #138018;
+    }
+  }
+  #secondary-button {
+    @extend %large-button-attr;
+    background-color: white;
+    color: #1e262c;
+    border: 1px solid #c1c5c7;
+    box-sizing: border-box;
+    &:hover {
+      background-color: #d2d4d5;
+    }
+  }
+  #small-button {
+    @extend %small-button-attr;
+    background-color: #009cde;
+    color: white;
+    &:hover {
+      background-color: #0077aa;
+    }
+  }
+  button:disabled {
+    @extend %large-button-attr;
+    background-color: #d1d5d8;
+  }
+}

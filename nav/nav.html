@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./nav.css" />
+    <link rel="stylesheet" href="../css/_reset.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/all.min.js"></script>
+    <title>3단 네비게이션</title>
+  </head>
+  <body>
+    <div class="ver_nav">
+      <ul class="GNB_list">
+        <li>
+          <i class="fa-solid fa-camera-retro"></i><span>카메라</span>
+          <ul class="sub_list">
+            <li>캐논</li>
+            <li>
+              후지
+              <ul class="mini_list">
+                <li>후지필름</li>
+                <li>후지 인스탁스</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <i class="fa-solid fa-fire"></i><span>불티</span>
+          <ul class="sub_list">
+            <li>불이야</li>
+            <li>불불불</li>
+            <li>타올라라~</li>
+          </ul>
+        </li>
+        <li>
+          <i class="fa-solid fa-ghost"></i><span>기싱</span>
+          <ul class="sub_list">
+            <li>
+              캐스퍼
+              <ul class="mini_list">
+                <li>미니귀신</li>
+                <li>파란귀신</li>
+              </ul>
+            </li>
+            <li>학교괴담</li>
+            <li>여고괴담</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script>
+      $(".GNB_list>li").hover(
+        function () {
+          $(this).find(".sub_list").stop().slideToggle(500);
+        },
+        function () {
+          $(this).find(".sub_list").stop().slideToggle(500);
+        }
+      );
+      $(".sub_list>li").hover(
+        function () {
+          $(this).find(".mini_list").stop().slideToggle(500);
+        },
+        function () {
+          $(this).find(".mini_list").stop().slideToggle(500);
+        }
+      );
+    </script>
+  </body>
+</html>

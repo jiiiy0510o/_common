@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>양방향 범위 조절</title>
+    <link rel="stylesheet" href="../js/jquery-ui-1.13.2/jquery-ui.min.css" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+  </head>
+  <body style="padding: 50px; width: 500px">
+    <label for="twobar">Price Range</label>
+    <input
+      type="text"
+      readonly
+      id="twobar"
+      style="border: 0; color: #f6931f; font-weight: bold; margin-bottom: 20px"
+    />
+
+    <div id="slider-range"></div>
+
+    <script>
+      $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 500,
+        values: [75, 300],
+        slide: function (event, ui) {
+          $("#twobar").val(`$ ${ui.values[0]} - $ ${ui.values[1]}`);
+        },
+      });
+      $("#twobar").val(
+        "$ " +
+          $("#slider-range").slider("values", 0) +
+          " - $ " +
+          $("#slider-range").slider("values", 1)
+      );
+    </script>
+  </body>
+</html>

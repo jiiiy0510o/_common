@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모달~모달~</title>
+
+    <link rel="stylesheet" href="../css/_reset.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="../js/jquery-ui-1.13.2/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <script src="../js/all.min.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"
+    ></script>
+  </head>
+  <body>
+    <div class="modal_wrap">
+      <div class="modal">
+        <p>X</p>
+        <div class="input-party">
+          <div class="input_1">
+            <form>
+              <input
+                type="text"
+                id="search1"
+                placeholder="검색어를 입력하세요~"
+              />
+            </form>
+            <div class="mag">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="eks">
+              <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ckme">검색갈겨</div>
+    </div>
+
+    <script>
+      //모달 보이기, 숨기기, 드래그
+      $(".ckme").on("click", function () {
+        $(".ckme").hide();
+        $(".modal").show();
+      });
+      $(".modal p").on("click", function () {
+        $(".ckme").show();
+        $(".modal").hide();
+      });
+
+      //모달 드래그 가능하게, 부모요소만큼 드래그 영역 제한
+      $(".modal").draggable({ containment: "parent" });
+
+      //돋보기, 엑스 토글
+      $("#search1").focus(function () {
+        $("#search1").css("background-color", "white");
+        $(".mag").hide();
+        $(".eks").show();
+      });
+      $("#search1").blur(function () {
+        $("#search1").css("background-color", "transparent");
+        $(".mag").show();
+        $(".eks").hide();
+      });
+
+      //input값 비우기
+      $(".eks").click(function () {
+        if ($("#search1").val() == "") {
+          alert("검색어를 입력하세요");
+        } else {
+          alert("삭제하시겠습니까?");
+          $("#search1").val("");
+          $(".eks").hide();
+          $(".mag").show();
+        }
+      });
+
+      $(function () {
+        var availableCity = [
+          "서울",
+          "부산",
+          "대구",
+          "광주",
+          "울산",
+          "서라벌",
+          "부영",
+          "대전",
+          "광안리",
+          "북한산",
+        ];
+        $("#search1").autocomplete({
+          source: availableCity,
+          select: function (event, ui) {
+            console.log(ui.item.value);
+          },
+          focus: function (event, ui) {
+            return true;
+            //event.preventDefault();
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

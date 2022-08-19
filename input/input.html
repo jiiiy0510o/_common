@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎉인풋파티🎉</title>
+    <link rel="stylesheet" href="../css/_reset.css" />
+    <link rel="stylesheet" href="../input/input.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../js/jquery-ui-1.13.2/jquery-ui.min.css" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/all.min.js"></script>
+    <script src="../js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <div class="input-party">
+      <div class="search_modal">
+        <div class="inner_modal">
+          <div class="scissors">X</div>
+          <div class="search_content"></div>
+        </div>
+      </div>
+      <div class="input_box">
+        <div class="input_1">
+          <form>
+            <input type="text" id="search1" />
+          </form>
+          <div class="mag">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="eks">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      //돋보기, 엑스 토글
+      $("#search1").focus(function () {
+        $(".mag").hide();
+        $(".eks").show();
+      });
+      //엑스 누를시에 포커스 꺼짐 방지를 위해 preventDefault 대신 return false사용
+      $("#search1").blur(function () {
+        return false;
+      });
+      //input감추고 모달 띄우기
+      $(".mag").click(function () {
+        $(".search_modal").css("display", "block");
+        $(".input_box").css("display", "none");
+        $(".search_content").text(`검색어를 입력해주세요`);
+      });
+      //모달 드래그 가능하게, 부모요소만큼 드래그 영역 제한
+      $(".inner_modal").draggable({ containment: "parent" });
+
+      //모달 X누르면 꺼짐
+      $(".scissors").click(function () {
+        $(".search_modal").css("display", "none");
+        $(".input_box").css("display", "block");
+      });
+
+      //input값 비우기
+      $(".eks").click(function () {
+        alert("삭제하시겠습니까?");
+        $("#search1").val("");
+        $(".eks").hide();
+        $(".mag").show();
+      });
+
+      $(function () {
+        var availableCity = [
+          "서울",
+          "부산",
+          "대구",
+          "광주",
+          "울산",
+          "서라벌",
+          "부영",
+          "대전",
+          "광안리",
+          "북한산",
+        ];
+        $("#search1").autocomplete({
+          source: availableCity,
+          select: function (event, ui) {
+            console.log(ui.item.value);
+          },
+          focus: function (event, ui) {
+            return true;
+            //event.preventDefault();
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

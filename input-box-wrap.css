@@ -1,0 +1,407 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body .box-wrap {
+  padding: 100px;
+  width: 76%;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+body .box-wrap .checkbox {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border-right: 3px double whitesmoke;
+}
+body .box-wrap .checkbox .form {
+  padding: 0 16px;
+  margin: 30px auto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+}
+body .box-wrap .checkbox .form h2 {
+  margin: 0 72px 50px 72px;
+  color: white;
+}
+body .box-wrap .checkbox .form .inputGroup {
+  width: 310px;
+  background-color: #fff;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+  border-radius: 25px;
+}
+body .box-wrap .checkbox .form .inputGroup input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+body .box-wrap .checkbox .form .inputGroup input:checked ~ label {
+  color: #fff;
+}
+body .box-wrap .checkbox .form .inputGroup input:checked ~ label:before {
+  transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
+}
+body .box-wrap .checkbox .form .inputGroup input:checked ~ label:after {
+  background-color: #f2ad54;
+  border-color: #f2ad54;
+}
+body .box-wrap .checkbox .form .inputGroup label {
+  padding: 12px 30px;
+  width: 250px;
+  display: block;
+  text-align: left;
+  color: #3c454c;
+  cursor: pointer;
+  position: relative;
+  border-radius: 25px;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+body .box-wrap .checkbox .form .inputGroup label:before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  content: "";
+  background-color: #05507d;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+body .box-wrap .checkbox .form .inputGroup label:after {
+  width: 32px;
+  height: 32px;
+  content: "";
+  border: 2px solid #7c96b2;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+body .box-wrap .checkbox .form02 {
+  width: 100%;
+  margin: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .box-wrap .checkbox .form02 label {
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}
+body .box-wrap .checkbox .form02 input[type=checkbox],
+body .box-wrap .checkbox .form02 input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+body .box-wrap .checkbox .form02 input[type=radio]:checked + .rdo {
+  background-color: #606062;
+  background-image: linear-gradient(#255cd2, #1d52c1);
+}
+body .box-wrap .checkbox .form02 input[type=radio]:checked + .rdo:after {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.15s ease;
+}
+body .box-wrap .checkbox .form02 input[type=checkbox]:checked + .cbx {
+  background-color: #606062;
+  background-image: linear-gradient(#255cd2, #1d52c1);
+}
+body .box-wrap .checkbox .form02 input[type=checkbox]:checked + .cbx svg {
+  stroke-dashoffset: 0;
+  transition: all 0.15s ease;
+}
+body .box-wrap .checkbox .form02 .cbx {
+  position: relative;
+  display: block;
+  float: left;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: #eee;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s ease;
+  margin: 3px;
+}
+body .box-wrap .checkbox .form02 .cbx svg {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 17;
+  stroke-dashoffset: 17;
+  transform: translate3d(0, 0, 0);
+}
+body .box-wrap .checkbox .form02 .rdo {
+  position: relative;
+  display: block;
+  float: left;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background-color: #eee;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s ease;
+}
+body .box-wrap .checkbox .form02 .rdo:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 6px;
+  left: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transform: scale(0);
+}
+body .box-wrap .checkbox .form02 .rdo .cbx + span,
+body .box-wrap .checkbox .form02 .rdo + span {
+  float: left;
+  margin-left: 6px;
+}
+body .box-wrap .radiobox {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+body .box-wrap .radiobox .form {
+  padding: 0 16px;
+  margin: 30px auto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+}
+body .box-wrap .radiobox .form h2 {
+  margin: 0 72px 50px 72px;
+  color: white;
+}
+body .box-wrap .radiobox .form .inputGroup {
+  width: 310px;
+  background-color: #fff;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+  border-radius: 25px;
+}
+body .box-wrap .radiobox .form .inputGroup input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+body .box-wrap .radiobox .form .inputGroup input:checked ~ label {
+  color: #fff;
+}
+body .box-wrap .radiobox .form .inputGroup input:checked ~ label:before {
+  transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
+}
+body .box-wrap .radiobox .form .inputGroup input:checked ~ label:after {
+  background-color: #f2ad54;
+  border-color: #f2ad54;
+}
+body .box-wrap .radiobox .form .inputGroup label {
+  padding: 12px 30px;
+  width: 250px;
+  display: block;
+  text-align: left;
+  color: #3c454c;
+  cursor: pointer;
+  position: relative;
+  border-radius: 25px;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+body .box-wrap .radiobox .form .inputGroup label:before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  content: "";
+  background-color: #05507d;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+body .box-wrap .radiobox .form .inputGroup label:after {
+  width: 32px;
+  height: 32px;
+  content: "";
+  border: 2px solid #7c96b2;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+body .box-wrap .radiobox .form03 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+body .box-wrap .radiobox .form03 .toggle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+body .box-wrap .radiobox .form03 .toggle-button input[type=radio] {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid rgb(37, 37, 181);
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-right: 5px;
+  cursor: pointer;
+}
+body .box-wrap .radiobox .form03 input:checked:after {
+  content: "";
+  position: absolute;
+  background: rgb(37, 37, 181);
+  width: 12px;
+  height: 12px;
+  margin: 2px;
+  border-radius: 50%;
+  display: block;
+  -webkit-animation-name: circle;
+          animation-name: circle;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+@-webkit-keyframes circle {
+  0% {
+    left: 1px;
+    top: 2px;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  100% {
+    left: 0px;
+    top: 2px;
+    margin-top: 0px;
+    opacity: 100;
+  }
+}
+@keyframes circle {
+  0% {
+    left: 1px;
+    top: 2px;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  100% {
+    left: 0px;
+    top: 2px;
+    margin-top: 0px;
+    opacity: 100;
+  }
+}
+body .box-wrap .radiobox .form04 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+body .box-wrap .radiobox .form04 .toggle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+body .box-wrap .radiobox .form04 .toggle-button input[type=radio] {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid rgb(37, 37, 181);
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-right: 5px;
+  cursor: pointer;
+}
+body .box-wrap .radiobox .form04 input:checked:after {
+  content: "";
+  margin: -1px;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 12px;
+  border: 6px solid rgb(37, 37, 181);
+  transition: 1s;
+}

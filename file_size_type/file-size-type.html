@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파일 사이즈&확장자</title>
+    <link rel="stylesheet" href="./file-size-type.css" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="file-size-type">
+      <div class="file-size">
+        <input type="file" id="fileitem" onchange="onChange()" />
+        <div class="size1"></div>
+        <div class="size2"></div>
+        <input type="submit" />
+      </div>
+    </div>
+
+    <script>
+      function onChange() {
+        const size = $("#fileitem")[0].files[0].size;
+        const type = $("#fileitem")[0].files[0].type;
+        const strArray = type.split("/");
+        $(".size1").text(`파일사이즈: ${size}`);
+        $(".size2").text(`파일확장자: ${strArray[1]}`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+body .input-search-02 #small-input-search, body .input-select02 .input-search-01 #big-input-search, body .input-select01 .input-box #small, body .input-select01 .input-box #normal {
+  min-width: 180px;
+  border-radius: 2px;
+  padding: 15px;
+  border: 1px solid #c1c5c7;
+  margin: 10px;
+  cursor: pointer;
+}
+body .input-search-02 #small-input-search:focus, body .input-select02 .input-search-01 #big-input-search:focus, body .input-select01 .input-box #small:focus, body .input-select01 .input-box #normal:focus {
+  outline: none;
+  border: 1px solid #009cde;
+}
+body .input-search-02 #small-input-search:hover, body .input-select02 .input-search-01 #big-input-search:hover, body .input-select01 .input-box #small:hover, body .input-select01 .input-box #normal:hover {
+  border: 1px solid #009cde;
+}
+
+body .input-search-02 ul, body .input-select02 .input-search-01 ul {
+  width: 198px;
+  position: absolute;
+  left: 10px;
+  border: 1px solid #c1c5c7;
+  border-radius: 2px;
+  padding: 6px;
+  border-top: none;
+  font-size: 14px;
+}
+body .input-search-02 ul li, body .input-select02 .input-search-01 ul li {
+  padding: 8px;
+  border-radius: 2px;
+}
+body .input-search-02 ul li:hover, body .input-select02 .input-search-01 ul li:hover {
+  color: white;
+  background-color: #009cde;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .hide {
+  display: none;
+}
+body .input-select01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+body .input-select01 datalist {
+  border: none;
+}
+body .input-select01 datalist option {
+  background-color: #009cde;
+}
+body .input-select01 .input-box {
+  position: relative;
+  box-sizing: border-box;
+}
+body .input-select01 .input-box #normal {
+  height: 20px;
+}
+body .input-select01 .input-box #small {
+  height: 10px;
+}
+body .input-select02 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+body .input-select02 .input-search-01 {
+  position: relative;
+}
+body .input-select02 .input-search-01 #big-input-search {
+  height: 20px;
+}
+body .input-select02 .input-search-01 svg {
+  position: absolute;
+  top: 30px;
+  right: 25px;
+  color: #c1c5c7;
+}
+body .input-select02 .input-search-01 ul {
+  top: 61px;
+}
+body .input-search-02 {
+  position: relative;
+}
+body .input-search-02 #small-input-search {
+  height: 10px;
+}
+body .input-search-02 svg {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: #c1c5c7;
+}
+body .input-search-02 ul {
+  top: 51px;
+  height: 100px;
+  overflow-y: auto;
+}

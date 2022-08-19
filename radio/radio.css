@@ -1,0 +1,103 @@
+body {
+  background-color: cadetblue;
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+body section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+body section h2 {
+  font-size: 26px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+body section .toggle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+body section .toggle-button input[type=radio] {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid salmon;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-right: 5px;
+}
+body section .toggle-button input[type=radio]:checked:after {
+  content: "";
+  position: absolute;
+  background: salmon;
+  width: 12px;
+  height: 12px;
+  margin: 2px;
+  border-radius: 50%;
+  display: block;
+  -webkit-animation-name: circle;
+          animation-name: circle;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+@-webkit-keyframes circle {
+  0% {
+    left: 1px;
+    top: 2px;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  100% {
+    left: 0px;
+    top: 2px;
+    margin-top: 0px;
+    opacity: 100;
+  }
+}
+@keyframes circle {
+  0% {
+    left: 1px;
+    top: 2px;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  100% {
+    left: 0px;
+    top: 2px;
+    margin-top: 0px;
+    opacity: 100;
+  }
+}
+body section .check-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+body section .check-button input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid salmon;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-right: 5px;
+}

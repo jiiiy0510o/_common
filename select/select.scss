@@ -1,0 +1,110 @@
+%input-attr {
+  min-width: 180px;
+  border-radius: 2px;
+  padding: 15px;
+  border: 1px solid #c1c5c7;
+  margin: 10px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+    border: 1px solid #009cde;
+  }
+  &:hover {
+    border: 1px solid #009cde;
+  }
+}
+%ul-attr {
+  width: 198px;
+  position: absolute;
+  left: 10px;
+  border: 1px solid #c1c5c7;
+  border-radius: 2px;
+  padding: 6px;
+  border-top: none;
+  font-size: 14px;
+  li {
+    padding: 8px;
+    border-radius: 2px;
+    &:hover {
+      color: white;
+      background-color: #009cde;
+    }
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .hide {
+    display: none;
+  }
+  .input-select01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    datalist {
+      border: none;
+      option {
+        background-color: #009cde;
+      }
+    }
+    .input-box {
+      position: relative;
+      box-sizing: border-box;
+
+      #normal {
+        @extend %input-attr;
+        height: 20px;
+      }
+      #small {
+        @extend %input-attr;
+        height: 10px;
+      }
+    }
+  }
+  .input-select02 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .input-search-01 {
+      position: relative;
+      #big-input-search {
+        @extend %input-attr;
+        height: 20px;
+      }
+      svg {
+        position: absolute;
+        top: 30px;
+        right: 25px;
+        color: #c1c5c7;
+      }
+      ul {
+        @extend %ul-attr;
+        top: 61px;
+      }
+    }
+  }
+  .input-search-02 {
+    position: relative;
+    #small-input-search {
+      @extend %input-attr;
+      height: 10px;
+    }
+    svg {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      color: #c1c5c7;
+    }
+    ul {
+      @extend %ul-attr;
+      top: 51px;
+      height: 100px;
+      overflow-y: auto;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.input-party {
+  position: absolute;
+  top: 92px;
+  left: 32px;
+  width: 96%;
+  height: 82%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  .search_modal {
+    display: none;
+    z-index: 55;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .inner_modal {
+      position: absolute;
+      top: 20%;
+      left: 35%;
+      width: 300px;
+      height: 300px;
+      border: 5px double rgba(255, 205, 7, 0.5);
+      border-radius: 20px;
+      .scissors {
+        position: absolute;
+        top: 15px;
+        right: 22px;
+        cursor: pointer;
+        font-weight: 900;
+        font-size: 24px;
+      }
+      .search_content {
+        padding: 20px;
+      }
+    }
+  }
+  .input_box {
+    .input_1 {
+      position: relative;
+      form {
+        input {
+          border: none;
+          border-bottom: 1px solid #888;
+          width: 260px;
+          padding: 10px;
+          border-radius: 2px;
+          &:focus {
+            outline: none !important;
+            border: 2px solid rgb(71, 71, 176);
+          }
+        }
+      }
+      .mag {
+        position: absolute;
+        right: 6px;
+        top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 26px;
+        height: 26px;
+        background-color: rgb(71, 71, 176);
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+      }
+      .eks {
+        display: none;
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        color: #ccc;
+        cursor: pointer;
+      }
+    }
+  }
+}
